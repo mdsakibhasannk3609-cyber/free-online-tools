@@ -13,132 +13,160 @@
 
 body{
     margin:0;
-    font-family:Arial,sans-serif;
-    background:#f4f7fb;
-    color:#222;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(-45deg,#0f172a,#312e81,#1d4ed8,#581c87);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+    color:#fff;
+    min-height:100vh;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 
 header{
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
-    color:white;
-    padding:35px 15px;
     text-align:center;
+    padding:35px 15px 25px;
 }
 
 header h1{
-    margin:0;
-    font-size:30px;
+    font-size:36px;
+    margin:0 0 10px;
+    animation:float 3s ease-in-out infinite;
 }
 
 header p{
-    margin:10px 0 0;
-    opacity:.9;
+    opacity:.85;
+    margin:0;
 }
 
-.container{
-    max-width:1000px;
-    margin:auto;
-    padding:20px;
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
 }
 
 .search{
-    width:100%;
-    padding:15px;
-    border:1px solid #ddd;
-    border-radius:12px;
-    font-size:16px;
-    margin-bottom:20px;
-}
-
-.tools{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:16px;
-}
-
-.card{
-    background:white;
-    padding:22px;
-    border-radius:16px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.icon{
-    font-size:38px;
-}
-
-.card h2{
-    font-size:20px;
-    margin:12px 0 8px;
-}
-
-.card p{
-    color:#666;
-    line-height:1.5;
-}
-
-button{
-    width:100%;
+    display:block;
+    width:92%;
+    max-width:600px;
+    margin:15px auto 30px;
+    padding:15px 20px;
     border:0;
-    padding:12px;
-    border-radius:10px;
-    background:#2563eb;
-    color:white;
+    border-radius:30px;
+    outline:none;
     font-size:16px;
-    cursor:pointer;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
-.tool-box{
-    margin-top:20px;
-    background:white;
-    padding:20px;
-    border-radius:16px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+.container{
+    width:94%;
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+    padding-bottom:40px;
 }
 
-input,textarea{
+.tool{
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:20px;
+    padding:22px;
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+    transition:.35s;
+    animation:cardIn .7s ease both;
+}
+
+.tool:hover{
+    transform:translateY(-8px) scale(1.02);
+    background:rgba(255,255,255,.18);
+}
+
+@keyframes cardIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.tool h2{
+    margin-top:0;
+    font-size:21px;
+}
+
+input,textarea,select,button{
     width:100%;
-    padding:13px;
-    margin:7px 0;
-    border:1px solid #ddd;
-    border-radius:9px;
-    font-size:16px;
+    padding:11px;
+    margin:6px 0;
+    border-radius:10px;
+    border:0;
+    outline:none;
+    font-size:15px;
 }
 
 textarea{
-    min-height:130px;
+    min-height:100px;
     resize:vertical;
 }
 
-.result{
-    margin-top:15px;
-    padding:15px;
-    background:#eef4ff;
-    border-radius:10px;
+button{
+    background:#fff;
+    color:#312e81;
     font-weight:bold;
-    text-align:center;
+    cursor:pointer;
+    transition:.25s;
 }
 
-.ad-box{
-    margin:20px 0;
-    padding:25px;
-    background:white;
-    border:1px dashed #bbb;
+button:hover{
+    transform:scale(1.03);
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+}
+
+.result{
+    background:rgba(0,0,0,.2);
+    padding:10px;
+    border-radius:10px;
+    margin-top:8px;
+    min-height:20px;
+    word-wrap:break-word;
+}
+
+.ad{
+    width:92%;
+    max-width:728px;
+    min-height:90px;
+    margin:10px auto 30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px dashed rgba(255,255,255,.5);
     border-radius:12px;
-    text-align:center;
-    color:#888;
+    opacity:.7;
 }
 
 footer{
-    margin-top:40px;
-    padding:25px;
-    background:#111827;
-    color:white;
     text-align:center;
+    padding:25px;
+    background:rgba(0,0,0,.25);
+    font-size:14px;
 }
 
 .hidden{
-    display:none;
+    display:none!important;
+}
+
+.small{
+    font-size:13px;
+    opacity:.8;
 }
 </style>
 </head>
@@ -147,10 +175,8 @@ footer{
 
 <header>
     <h1>🛠️ Free Online Tools</h1>
-    <p>Simple, fast and free tools for everyone</p>
+    <p>Fast • Free • Simple • Useful</p>
 </header>
-
-<div class="container">
 
 <input
     class="search"
@@ -160,192 +186,395 @@ footer{
     onkeyup="searchTools()"
 >
 
-<div class="ad-box">
-    Advertisement
-    <br>
-    <small>Ad space — monetization can be added later</small>
+<div class="ad">Advertisement</div>
+
+<div class="container">
+
+<!-- 1 Calculator -->
+<div class="tool">
+<h2>🧮 Calculator</h2>
+<input id="calc" placeholder="Example: 25+10*2">
+<button onclick="calculate()">Calculate</button>
+<div class="result" id="calcResult"></div>
 </div>
 
-<div class="tools" id="tools">
-
-<div class="card tool-card">
-    <div class="icon">🧮</div>
-    <h2>Calculator</h2>
-    <p>Calculate numbers quickly.</p>
-    <button onclick="openTool('calculator')">Open Tool</button>
+<!-- 2 Percentage -->
+<div class="tool">
+<h2>📊 Percentage</h2>
+<input id="p1" type="number" placeholder="Number">
+<input id="p2" type="number" placeholder="Total">
+<button onclick="percentage()">Calculate</button>
+<div class="result" id="pResult"></div>
 </div>
 
-<div class="card tool-card">
-    <div class="icon">📊</div>
-    <h2>Percentage Calculator</h2>
-    <p>Calculate percentages easily.</p>
-    <button onclick="openTool('percentage')">Open Tool</button>
+<!-- 3 Age -->
+<div class="tool">
+<h2>🎂 Age Calculator</h2>
+<input id="birth" type="date">
+<button onclick="ageCalc()">Calculate Age</button>
+<div class="result" id="ageResult"></div>
 </div>
 
-<div class="card tool-card">
-    <div class="icon">🎂</div>
-    <h2>Age Calculator</h2>
-    <p>Calculate age from birth date.</p>
-    <button onclick="openTool('age')">Open Tool</button>
+<!-- 4 Word Counter -->
+<div class="tool">
+<h2>📝 Word Counter</h2>
+<textarea id="textCount" placeholder="Write your text..." oninput="countText()"></textarea>
+<div class="result" id="countResult">Words: 0 | Characters: 0</div>
 </div>
 
-<div class="card tool-card">
-    <div class="icon">🔤</div>
-    <h2>Word Counter</h2>
-    <p>Count words and characters.</p>
-    <button onclick="openTool('words')">Open Tool</button>
+<!-- 5 Discount -->
+<div class="tool">
+<h2>💰 Discount Calculator</h2>
+<input id="price" type="number" placeholder="Original price">
+<input id="discount" type="number" placeholder="Discount %">
+<button onclick="discountCalc()">Calculate</button>
+<div class="result" id="discountResult"></div>
 </div>
 
+<!-- 6 Unit -->
+<div class="tool">
+<h2>📏 Unit Converter</h2>
+<input id="km" type="number" placeholder="Kilometers">
+<button onclick="convertUnit()">Convert to Miles</button>
+<div class="result" id="unitResult"></div>
 </div>
 
-<div id="calculator" class="tool-box hidden">
-    <h2>🧮 Calculator</h2>
-    <input id="calc" type="text" placeholder="Example: 25+10*2">
-    <button onclick="calculate()">Calculate</button>
-    <div id="calcResult" class="result">Result will appear here</div>
+<!-- 7 Text Case -->
+<div class="tool">
+<h2>🔤 Text Case Converter</h2>
+<textarea id="caseText" placeholder="Enter text..."></textarea>
+<button onclick="upperCase()">UPPERCASE</button>
+<button onclick="lowerCase()">lowercase</button>
+<button onclick="titleCase()">Title Case</button>
+<div class="result" id="caseResult"></div>
 </div>
 
-<div id="percentage" class="tool-box hidden">
-    <h2>📊 Percentage Calculator</h2>
-    <input id="percent" type="number" placeholder="Percentage">
-    <input id="number" type="number" placeholder="Number">
-    <button onclick="percentage()">Calculate</button>
-    <div id="percentResult" class="result">Result will appear here</div>
+<!-- 8 Date Difference -->
+<div class="tool">
+<h2>📅 Date Difference</h2>
+<input id="date1" type="date">
+<input id="date2" type="date">
+<button onclick="dateDiff()">Calculate Difference</button>
+<div class="result" id="dateResult"></div>
 </div>
 
-<div id="age" class="tool-box hidden">
-    <h2>🎂 Age Calculator</h2>
-    <input id="birthdate" type="date">
-    <button onclick="ageCalculator()">Calculate Age</button>
-    <div id="ageResult" class="result">Your age will appear here</div>
+<!-- 9 Countdown -->
+<div class="tool">
+<h2>⏱️ Countdown Timer</h2>
+<input id="seconds" type="number" placeholder="Seconds">
+<button onclick="startTimer()">Start</button>
+<div class="result" id="timerResult">00:00</div>
 </div>
 
-<div id="words" class="tool-box hidden">
-    <h2>🔤 Word Counter</h2>
-    <textarea id="text" placeholder="Write or paste your text here"></textarea>
-    <button onclick="wordCounter()">Count</button>
-    <div id="wordResult" class="result">Result will appear here</div>
+<!-- 10 Random -->
+<div class="tool">
+<h2>🎲 Random Number</h2>
+<input id="min" type="number" placeholder="Minimum">
+<input id="max" type="number" placeholder="Maximum">
+<button onclick="randomNumber()">Generate</button>
+<div class="result" id="randomResult"></div>
+</div>
+
+<!-- 11 Color -->
+<div class="tool">
+<h2>🎨 Color Converter</h2>
+<input id="color" type="color" value="#6366f1" onchange="colorConvert()">
+<div class="result" id="colorResult">#6366f1</div>
+</div>
+
+<!-- 12 Binary -->
+<div class="tool">
+<h2>🔢 Binary / Decimal</h2>
+<input id="binary" placeholder="Enter binary number">
+<button onclick="binaryToDecimal()">Binary → Decimal</button>
+<input id="decimal" placeholder="Enter decimal number">
+<button onclick="decimalToBinary()">Decimal → Binary</button>
+<div class="result" id="binaryResult"></div>
+</div>
+
+<!-- 13 Text Cleaner -->
+<div class="tool">
+<h2>🧹 Text Cleaner</h2>
+<textarea id="dirtyText" placeholder="Enter text..."></textarea>
+<button onclick="cleanText()">Clean Text</button>
+<div class="result" id="cleanResult"></div>
+</div>
+
+<!-- 14 Password Generator -->
+<div class="tool">
+<h2>🔐 Password Generator</h2>
+<input id="passLength" type="number" value="12" min="4" max="50">
+<button onclick="generatePassword()">Generate Password</button>
+<div class="result" id="passResult"></div>
+</div>
+
+<!-- 15 Temperature -->
+<div class="tool">
+<h2>🌡️ Temperature Converter</h2>
+<input id="temp" type="number" placeholder="Celsius">
+<button onclick="temperature()">Celsius → Fahrenheit</button>
+<div class="result" id="tempResult"></div>
 </div>
 
 </div>
 
 <footer>
-    <p>© 2026 Free Online Tools</p>
-    <p>Free tools • Fast • Easy to use</p>
+    © 2026 Free Online Tools • Built with HTML, CSS & JavaScript
 </footer>
+
 
 <script>
 
-function openTool(id){
+/* Search */
+function searchTools(){
+    let value=document.getElementById("search").value.toLowerCase();
+    let tools=document.querySelectorAll(".tool");
 
-    document.querySelectorAll(".tool-box")
-    .forEach(box => box.classList.add("hidden"));
+    tools.forEach(tool=>{
+        let text=tool.innerText.toLowerCase();
 
-    document.getElementById(id).classList.remove("hidden");
-
-    document.getElementById(id).scrollIntoView({
-        behavior:"smooth"
+        if(text.includes(value)){
+            tool.classList.remove("hidden");
+        }else{
+            tool.classList.add("hidden");
+        }
     });
 }
 
-function calculate(){
 
+/* Calculator */
+function calculate(){
     let value=document.getElementById("calc").value;
 
     try{
-        let result=Function(
-            '"use strict";return ('+value+')'
-        )();
-
-        document.getElementById("calcResult").innerText=
-        "Result: "+result;
-
+        let result=Function('"use strict";return ('+value+')')();
+        document.getElementById("calcResult").innerText="Result: "+result;
     }catch{
-        document.getElementById("calcResult").innerText=
-        "Invalid calculation";
+        document.getElementById("calcResult").innerText="Invalid calculation";
     }
 }
 
+
+/* Percentage */
 function percentage(){
+    let a=parseFloat(document.getElementById("p1").value);
+    let b=parseFloat(document.getElementById("p2").value);
 
-    let p=parseFloat(
-        document.getElementById("percent").value
-    );
-
-    let n=parseFloat(
-        document.getElementById("number").value
-    );
-
-    if(isNaN(p)||isNaN(n)){
-
-        document.getElementById("percentResult").innerText=
-        "Please enter both numbers";
-
-        return;
+    if(!isNaN(a)&&!isNaN(b)&&b!==0){
+        document.getElementById("pResult").innerText=
+        ((a/b)*100).toFixed(2)+"%";
     }
-
-    let result=(p*n)/100;
-
-    document.getElementById("percentResult").innerText=
-    p+"% of "+n+" = "+result;
 }
 
-function ageCalculator(){
 
-    let birth=document.getElementById("birthdate").value;
-
-    if(!birth){
-
-        document.getElementById("ageResult").innerText=
-        "Please select your birth date";
-
-        return;
-    }
-
-    let dob=new Date(birth);
+/* Age */
+function ageCalc(){
+    let birth=new Date(document.getElementById("birth").value);
     let today=new Date();
 
-    let age=today.getFullYear()-dob.getFullYear();
+    if(isNaN(birth)) return;
 
-    let month=today.getMonth()-dob.getMonth();
+    let age=today.getFullYear()-birth.getFullYear();
 
-    if(
-        month<0 ||
-        (month===0 && today.getDate()<dob.getDate())
-    ){
+    let month=today.getMonth()-birth.getMonth();
+
+    if(month<0 || (month===0 && today.getDate()<birth.getDate())){
         age--;
     }
 
     document.getElementById("ageResult").innerText=
-    "Your age is "+age+" years";
+    "Your age: "+age+" years";
 }
 
-function wordCounter(){
 
-    let text=document.getElementById("text").value.trim();
+/* Word Counter */
+function countText(){
+    let text=document.getElementById("textCount").value;
 
-    let words=text ? text.split(/\s+/).length : 0;
+    let words=text.trim()==="" ? 0 : text.trim().split(/\s+/).length;
 
-    let characters=text.length;
-
-    document.getElementById("wordResult").innerText=
-    "Words: "+words+" | Characters: "+characters;
+    document.getElementById("countResult").innerText=
+    "Words: "+words+" | Characters: "+text.length;
 }
 
-function searchTools(){
 
-    let search=
-    document.getElementById("search").value.toLowerCase();
+/* Discount */
+function discountCalc(){
+    let price=parseFloat(document.getElementById("price").value);
+    let discount=parseFloat(document.getElementById("discount").value);
 
-    document.querySelectorAll(".tool-card")
-    .forEach(card=>{
+    if(isNaN(price)||isNaN(discount)) return;
 
-        let text=card.innerText.toLowerCase();
+    let saved=price*discount/100;
+    let finalPrice=price-saved;
 
-        card.style.display=
-        text.includes(search) ? "" : "none";
+    document.getElementById("discountResult").innerText=
+    "You save: "+saved.toFixed(2)+" | Final: "+finalPrice.toFixed(2);
+}
 
-    });
+
+/* Unit */
+function convertUnit(){
+    let km=parseFloat(document.getElementById("km").value);
+
+    if(!isNaN(km)){
+        document.getElementById("unitResult").innerText=
+        km+" km = "+(km*0.621371).toFixed(3)+" miles";
+    }
+}
+
+
+/* Text Case */
+function upperCase(){
+    let text=document.getElementById("caseText").value;
+    document.getElementById("caseResult").innerText=text.toUpperCase();
+}
+
+function lowerCase(){
+    let text=document.getElementById("caseText").value;
+    document.getElementById("caseResult").innerText=text.toLowerCase();
+}
+
+function titleCase(){
+    let text=document.getElementById("caseText").value;
+
+    document.getElementById("caseResult").innerText=
+    text.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
+}
+
+
+/* Date Difference */
+function dateDiff(){
+    let d1=new Date(document.getElementById("date1").value);
+    let d2=new Date(document.getElementById("date2").value);
+
+    if(isNaN(d1)||isNaN(d2)) return;
+
+    let diff=Math.abs(d2-d1);
+    let days=Math.ceil(diff/(1000*60*60*24));
+
+    document.getElementById("dateResult").innerText=
+    days+" days";
+}
+
+
+/* Countdown */
+let timer;
+
+function startTimer(){
+    clearInterval(timer);
+
+    let seconds=parseInt(document.getElementById("seconds").value);
+
+    if(isNaN(seconds)||seconds<0) return;
+
+    timer=setInterval(()=>{
+        let min=Math.floor(seconds/60);
+        let sec=seconds%60;
+
+        document.getElementById("timerResult").innerText=
+        String(min).padStart(2,"0")+":"+String(sec).padStart(2,"0");
+
+        if(seconds<=0){
+            clearInterval(timer);
+            return;
+        }
+
+        seconds--;
+    },1000);
+}
+
+
+/* Random Number */
+function randomNumber(){
+    let min=parseInt(document.getElementById("min").value);
+    let max=parseInt(document.getElementById("max").value);
+
+    if(isNaN(min)||isNaN(max)||min>max) return;
+
+    let result=Math.floor(Math.random()*(max-min+1))+min;
+
+    document.getElementById("randomResult").innerText=
+    "Random number: "+result;
+}
+
+
+/* Color */
+function colorConvert(){
+    let color=document.getElementById("color").value;
+
+    document.getElementById("colorResult").innerText=
+    "HEX: "+color;
+}
+
+
+/* Binary */
+function binaryToDecimal(){
+    let binary=document.getElementById("binary").value;
+
+    if(!/^[01]+$/.test(binary)){
+        document.getElementById("binaryResult").innerText=
+        "Invalid binary number";
+        return;
+    }
+
+    document.getElementById("binaryResult").innerText=
+    "Decimal: "+parseInt(binary,2);
+}
+
+function decimalToBinary(){
+    let decimal=parseInt(document.getElementById("decimal").value);
+
+    if(isNaN(decimal)) return;
+
+    document.getElementById("binaryResult").innerText=
+    "Binary: "+decimal.toString(2);
+}
+
+
+/* Text Cleaner */
+function cleanText(){
+    let text=document.getElementById("dirtyText").value;
+
+    text=text.replace(/\s+/g," ").trim();
+
+    document.getElementById("cleanResult").innerText=text;
+}
+
+
+/* Password */
+function generatePassword(){
+
+    let length=parseInt(document.getElementById("passLength").value);
+
+    if(isNaN(length)||length<4) length=12;
+
+    let chars=
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+
+    let password="";
+
+    for(let i=0;i<length;i++){
+        password+=chars.charAt(
+            Math.floor(Math.random()*chars.length)
+        );
+    }
+
+    document.getElementById("passResult").innerText=password;
+}
+
+
+/* Temperature */
+function temperature(){
+
+    let c=parseFloat(document.getElementById("temp").value);
+
+    if(isNaN(c)) return;
+
+    let f=(c*9/5)+32;
+
+    document.getElementById("tempResult").innerText=
+    f.toFixed(2)+" °F";
 }
 
 </script>
