@@ -42,12 +42,42 @@ header p{
     opacity:.85;
     margin:0;
 }
-
+keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+}
 @keyframes float{
     0%,100%{transform:translateY(0)}
     50%{transform:translateY(-8px)}
 }
 
+/* এখানে .nav-link CSS বসাবে */
+
+.nav-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:5px auto 20px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:25px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.2);
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,.25);
+}
+
+/* এরপর আগের .search থাকবে */
+.search{
 .search{
     display:block;
     width:92%;
