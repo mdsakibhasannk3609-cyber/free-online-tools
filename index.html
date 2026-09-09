@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Free online tools including calculator, age calculator, word counter, password generator, QR generator and more.">
+<meta name="description" content="Free Online Tools - calculators, converters, generators and useful tools.">
+<meta name="keywords" content="free online tools, calculator, converter, password generator, word counter">
 
 <title>Free Online Tools</title>
 
@@ -15,187 +16,133 @@
 
 body{
     margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f5f7fb;
-    color:#172033;
+    font-family:Arial, sans-serif;
+    background:#f4f7fb;
+    color:#222;
 }
 
 header{
     background:linear-gradient(135deg,#2563eb,#7c3aed);
     color:white;
     text-align:center;
-    padding:50px 18px 65px;
+    padding:28px 15px;
 }
 
 header h1{
-    margin:0;
-    font-size:42px;
+    margin:0 0 8px;
+    font-size:32px;
 }
 
 header p{
-    margin:12px auto 0;
-    max-width:650px;
-    font-size:17px;
-    opacity:.92;
-    line-height:1.6;
-}
-
-.search{
-    max-width:650px;
-    margin:-28px auto 35px;
-    padding:0 15px;
-}
-
-.search input{
-    width:100%;
-    padding:18px 20px;
-    border:0;
-    outline:0;
-    border-radius:16px;
+    margin:0 0 18px;
     font-size:16px;
-    box-shadow:0 10px 30px rgba(0,0,0,.14);
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    background:rgba(255,255,255,.18);
+    padding:9px 15px;
+    border-radius:20px;
+    font-size:14px;
+}
+
+nav a:hover{
+    background:white;
+    color:#2563eb;
 }
 
 .container{
-    max-width:1150px;
+    max-width:1100px;
     margin:auto;
-    padding:0 15px 50px;
+    padding:20px;
+}
+
+.search{
+    width:100%;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    margin-bottom:20px;
 }
 
 .tools{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:18px;
 }
 
 .tool{
     background:white;
-    padding:24px;
-    border-radius:18px;
-    box-shadow:0 5px 20px rgba(0,0,0,.07);
-    transition:.25s;
-}
-
-.tool:hover{
-    transform:translateY(-5px);
-}
-
-.icon{
-    font-size:38px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
 }
 
 .tool h2{
+    margin-top:0;
+    color:#2563eb;
     font-size:20px;
-    margin:12px 0 8px;
 }
 
-.tool p{
-    color:#667085;
-    font-size:14px;
-    line-height:1.5;
-    min-height:42px;
+input, textarea, select{
+    width:100%;
+    padding:11px;
+    margin:6px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
 }
 
 button{
-    cursor:pointer;
-}
-
-.use{
     width:100%;
-    border:0;
+    padding:11px;
+    border:none;
+    border-radius:8px;
     background:#2563eb;
     color:white;
-    padding:12px;
-    border-radius:10px;
+    cursor:pointer;
     font-size:15px;
+    margin-top:6px;
 }
 
-.use:hover{
+button:hover{
     background:#1d4ed8;
 }
 
-.toolbox{
-    display:none;
-    background:white;
-    margin:30px 0;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.toolbox h2{
-    margin-top:0;
-}
-
-.close{
-    float:right;
-    border:0;
-    background:#eef0f4;
-    padding:8px 12px;
-    border-radius:8px;
-}
-
-input,textarea,select{
-    width:100%;
-    padding:12px;
-    margin:7px 0;
-    border:1px solid #d9dde5;
-    border-radius:10px;
-    font-size:15px;
-    outline:none;
-}
-
-textarea{
-    min-height:150px;
-    resize:vertical;
-}
-
-.action{
-    border:0;
-    background:#2563eb;
-    color:white;
-    padding:12px 18px;
-    border-radius:10px;
-    margin:5px 3px;
-}
-
 .result{
-    margin-top:15px;
-    padding:15px;
-    background:#eef4ff;
-    border-radius:10px;
-    font-weight:bold;
+    margin-top:10px;
+    padding:10px;
+    background:#f1f5f9;
+    border-radius:8px;
+    min-height:20px;
     word-break:break-word;
 }
 
 footer{
+    margin-top:35px;
+    padding:25px 15px;
     background:#111827;
     color:white;
     text-align:center;
-    padding:35px 15px;
 }
 
-footer p{
-    color:#cbd5e1;
-    margin:8px;
+footer a{
+    color:#93c5fd;
+    text-decoration:none;
+    margin:0 8px;
 }
 
 .hidden{
-    display:none!important;
-}
-
-@media(max-width:600px){
-    header h1{
-        font-size:31px;
-    }
-
-    header{
-        padding-top:38px;
-    }
-
-    .tools{
-        grid-template-columns:1fr;
-    }
+    display:none;
 }
 </style>
 </head>
@@ -204,881 +151,541 @@ footer p{
 
 <header>
     <h1>🛠️ Free Online Tools</h1>
-    <p>
-        Fast, simple and useful online tools for everyday tasks.
-        No complicated setup required.
-    </p>
-</header>
+    <p>Simple, fast and free tools for everyone</p>
 
-<div class="search">
-    <input
-        id="search"
-        type="text"
-        placeholder="🔍 Search tools..."
-        oninput="searchTools()"
-    >
-</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+    </nav>
+</header>
 
 <div class="container">
 
-<div class="tools">
+<input
+    type="text"
+    id="search"
+    class="search"
+    placeholder="🔎 Search a tool..."
+    onkeyup="searchTools()"
+>
+
+<div class="tools" id="tools">
 
 <!-- 1 Calculator -->
 <div class="tool">
-<div class="icon">🧮</div>
-<h2>Calculator</h2>
-<p>Perform basic mathematical calculations.</p>
-<button class="use" onclick="openTool('calculator')">Use Tool</button>
+<h2>🧮 Calculator</h2>
+<input id="calc" placeholder="Example: 10+5*2">
+<button onclick="calculate()">Calculate</button>
+<div class="result" id="calcResult"></div>
 </div>
 
-<!-- 2 Age -->
+<!-- 2 Age Calculator -->
 <div class="tool">
-<div class="icon">🎂</div>
-<h2>Age Calculator</h2>
-<p>Calculate your age from your date of birth.</p>
-<button class="use" onclick="openTool('age')">Use Tool</button>
+<h2>🎂 Age Calculator</h2>
+<input type="date" id="birthDate">
+<button onclick="calculateAge()">Calculate Age</button>
+<div class="result" id="ageResult"></div>
 </div>
 
 <!-- 3 Word Counter -->
 <div class="tool">
-<div class="icon">📝</div>
-<h2>Word Counter</h2>
-<p>Count words, characters and sentences.</p>
-<button class="use" onclick="openTool('word')">Use Tool</button>
+<h2>📝 Word Counter</h2>
+<textarea id="wordText" rows="4" placeholder="Write your text..."></textarea>
+<button onclick="countWords()">Count Words</button>
+<div class="result" id="wordResult"></div>
 </div>
 
-<!-- 4 Password -->
+<!-- 4 Password Generator -->
 <div class="tool">
-<div class="icon">🔐</div>
-<h2>Password Generator</h2>
-<p>Create a strong random password.</p>
-<button class="use" onclick="openTool('password')">Use Tool</button>
+<h2>🔐 Password Generator</h2>
+<input type="number" id="passLength" value="12" min="4" max="50">
+<button onclick="generatePassword()">Generate Password</button>
+<div class="result" id="passResult"></div>
 </div>
 
 <!-- 5 Percentage -->
 <div class="tool">
-<div class="icon">📊</div>
-<h2>Percentage</h2>
-<p>Calculate percentages quickly.</p>
-<button class="use" onclick="openTool('percentage')">Use Tool</button>
+<h2>📊 Percentage Calculator</h2>
+<input type="number" id="percentA" placeholder="Number">
+<input type="number" id="percentB" placeholder="Total">
+<button onclick="percentage()">Calculate</button>
+<div class="result" id="percentResult"></div>
 </div>
 
 <!-- 6 BMI -->
 <div class="tool">
-<div class="icon">⚖️</div>
-<h2>BMI Calculator</h2>
-<p>Calculate BMI using height and weight.</p>
-<button class="use" onclick="openTool('bmi')">Use Tool</button>
+<h2>⚖️ BMI Calculator</h2>
+<input type="number" id="weight" placeholder="Weight (kg)">
+<input type="number" id="height" placeholder="Height (cm)">
+<button onclick="bmi()">Calculate BMI</button>
+<div class="result" id="bmiResult"></div>
 </div>
 
-<!-- 7 Unit -->
+<!-- 7 Unit Converter -->
 <div class="tool">
-<div class="icon">📏</div>
-<h2>Unit Converter</h2>
-<p>Convert meters, kilometers, feet and centimeters.</p>
-<button class="use" onclick="openTool('unit')">Use Tool</button>
+<h2>📏 Unit Converter</h2>
+<input type="number" id="unitValue" placeholder="Value">
+<select id="unitType">
+<option value="kmmi">Kilometer → Mile</option>
+<option value="mikm">Mile → Kilometer</option>
+<option value="mft">Meter → Feet</option>
+<option value="ftm">Feet → Meter</option>
+<option value="kgp">Kilogram → Pound</option>
+<option value="pkg">Pound → Kilogram</option>
+</select>
+<button onclick="convertUnit()">Convert</button>
+<div class="result" id="unitResult"></div>
 </div>
 
-<!-- 8 Case -->
+<!-- 8 Text Case -->
 <div class="tool">
-<div class="icon">🔤</div>
-<h2>Text Case</h2>
-<p>Convert text into upper or lowercase.</p>
-<button class="use" onclick="openTool('case')">Use Tool</button>
+<h2>🔤 Text Case Converter</h2>
+<textarea id="caseText" rows="4" placeholder="Enter text..."></textarea>
+<button onclick="upperCase()">UPPERCASE</button>
+<button onclick="lowerCase()">lowercase</button>
+<button onclick="titleCase()">Title Case</button>
+<div class="result" id="caseResult"></div>
 </div>
 
 <!-- 9 Stopwatch -->
 <div class="tool">
-<div class="icon">⏱️</div>
-<h2>Stopwatch</h2>
-<p>Simple online stopwatch.</p>
-<button class="use" onclick="openTool('stopwatch')">Use Tool</button>
+<h2>⏱️ Stopwatch</h2>
+<div class="result" id="stopwatch">00:00:00</div>
+<button onclick="startStopwatch()">Start</button>
+<button onclick="stopStopwatch()">Stop</button>
+<button onclick="resetStopwatch()">Reset</button>
 </div>
 
 <!-- 10 Countdown -->
 <div class="tool">
-<div class="icon">⏰</div>
-<h2>Countdown</h2>
-<p>Create a simple countdown timer.</p>
-<button class="use" onclick="openTool('countdown')">Use Tool</button>
+<h2>⏳ Countdown</h2>
+<input type="number" id="countSeconds" placeholder="Seconds">
+<button onclick="startCountdown()">Start Countdown</button>
+<div class="result" id="countResult"></div>
 </div>
 
-<!-- 11 Number Generator -->
+<!-- 11 Random Number -->
 <div class="tool">
-<div class="icon">🔢</div>
-<h2>Number Generator</h2>
-<p>Generate a random number between two values.</p>
-<button class="use" onclick="openTool('number')">Use Tool</button>
+<h2>🎲 Random Number</h2>
+<input type="number" id="minNum" placeholder="Minimum">
+<input type="number" id="maxNum" placeholder="Maximum">
+<button onclick="randomNumber()">Generate</button>
+<div class="result" id="randomResult"></div>
 </div>
 
-<!-- 12 Color -->
+<!-- 12 Color Picker -->
 <div class="tool">
-<div class="icon">🎨</div>
-<h2>Color Picker</h2>
-<p>Choose a color and get its HEX code.</p>
-<button class="use" onclick="openTool('color')">Use Tool</button>
+<h2>🎨 Color Picker</h2>
+<input type="color" id="colorPicker" value="#2563eb">
+<div class="result" id="colorResult">#2563EB</div>
 </div>
 
-<!-- 13 URL -->
+<!-- 13 URL Encoder -->
 <div class="tool">
-<div class="icon">🔗</div>
-<h2>URL Encoder</h2>
-<p>Encode or decode website URLs and text.</p>
-<button class="use" onclick="openTool('url')">Use Tool</button>
+<h2>🔗 URL Encoder / Decoder</h2>
+<textarea id="urlText" rows="3" placeholder="Enter URL or text..."></textarea>
+<button onclick="encodeURL()">Encode</button>
+<button onclick="decodeURL()">Decode</button>
+<div class="result" id="urlResult"></div>
 </div>
 
 <!-- 14 Text Cleaner -->
 <div class="tool">
-<div class="icon">🧹</div>
-<h2>Text Cleaner</h2>
-<p>Remove extra spaces from text.</p>
-<button class="use" onclick="openTool('cleaner')">Use Tool</button>
+<h2>🧹 Text Cleaner</h2>
+<textarea id="cleanText" rows="4" placeholder="Enter text..."></textarea>
+<button onclick="cleanText()">Clean Text</button>
+<div class="result" id="cleanResult"></div>
 </div>
 
 <!-- 15 Date Difference -->
 <div class="tool">
-<div class="icon">📅</div>
-<h2>Date Difference</h2>
-<p>Find the number of days between two dates.</p>
-<button class="use" onclick="openTool('datediff')">Use Tool</button>
+<h2>📅 Date Difference</h2>
+<input type="date" id="date1">
+<input type="date" id="date2">
+<button onclick="dateDifference()">Calculate Difference</button>
+<div class="result" id="dateResult"></div>
 </div>
 
 <!-- 16 JSON Formatter -->
 <div class="tool">
-<div class="icon">{ }</div>
-<h2>JSON Formatter</h2>
-<p>Format JSON text into readable JSON.</p>
-<button class="use" onclick="openTool('json')">Use Tool</button>
+<h2>🗂️ JSON Formatter</h2>
+<textarea id="jsonText" rows="5" placeholder='{"name":"John"}'></textarea>
+<button onclick="formatJSON()">Format JSON</button>
+<div class="result" id="jsonResult"></div>
 </div>
 
 <!-- 17 Base64 -->
 <div class="tool">
-<div class="icon">🔐</div>
-<h2>Base64 Encoder</h2>
-<p>Encode text into Base64 format.</p>
-<button class="use" onclick="openTool('base64')">Use Tool</button>
+<h2>🔐 Base64 Encoder</h2>
+<textarea id="baseText" rows="4" placeholder="Enter text..."></textarea>
+<button onclick="encodeBase64()">Encode</button>
+<button onclick="decodeBase64()">Decode</button>
+<div class="result" id="baseResult"></div>
 </div>
 
-<!-- 18 Roman -->
+<!-- 18 Roman Converter -->
 <div class="tool">
-<div class="icon">🏛️</div>
-<h2>Roman Number</h2>
-<p>Convert numbers into Roman numerals.</p>
-<button class="use" onclick="openTool('roman')">Use Tool</button>
+<h2>🏛️ Roman Number Converter</h2>
+<input type="number" id="romanNum" placeholder="Example: 2026">
+<button onclick="toRoman()">Convert</button>
+<div class="result" id="romanResult"></div>
 </div>
 
 <!-- 19 Random Choice -->
 <div class="tool">
-<div class="icon">🎲</div>
-<h2>Random Choice</h2>
-<p>Pick one option randomly from your list.</p>
-<button class="use" onclick="openTool('choice')">Use Tool</button>
-</div>
-
-<!-- 20 Character -->
-<div class="tool">
-<div class="icon">🔠</div>
-<h2>Character Counter</h2>
-<p>Count letters, numbers and characters.</p>
-<button class="use" onclick="openTool('character')">Use Tool</button>
-</div>
-
-</div>
-
-
-<!-- CALCULATOR -->
-<div class="toolbox" id="calculator">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>🧮 Calculator</h2>
-<input id="calc" placeholder="Example: 25 + 10 * 2">
-<button class="action" onclick="calculate()">Calculate</button>
-<div class="result" id="calcResult"></div>
-</div>
-
-
-<!-- AGE -->
-<div class="toolbox" id="age">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>🎂 Age Calculator</h2>
-<input type="date" id="birth">
-<button class="action" onclick="ageCalc()">Calculate Age</button>
-<div class="result" id="ageResult"></div>
-</div>
-
-
-<!-- WORD -->
-<div class="toolbox" id="word">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>📝 Word Counter</h2>
-<textarea id="wordText" oninput="wordCount()" placeholder="Enter text..."></textarea>
-<div class="result" id="wordResult">Words: 0 | Characters: 0 | Sentences: 0</div>
-</div>
-
-
-<!-- PASSWORD -->
-<div class="toolbox" id="password">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>🔐 Password Generator</h2>
-<input type="number" id="passLength" value="12" min="4" max="60">
-<button class="action" onclick="passwordGen()">Generate</button>
-<div class="result" id="passResult"></div>
-</div>
-
-
-<!-- PERCENTAGE -->
-<div class="toolbox" id="percentage">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>📊 Percentage Calculator</h2>
-<input type="number" id="percentValue" placeholder="Value">
-<input type="number" id="percentTotal" placeholder="Total">
-<button class="action" onclick="percentage()">Calculate</button>
-<div class="result" id="percentResult"></div>
-</div>
-
-
-<!-- BMI -->
-<div class="toolbox" id="bmi">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>⚖️ BMI Calculator</h2>
-<input type="number" id="height" placeholder="Height in cm">
-<input type="number" id="weight" placeholder="Weight in kg">
-<button class="action" onclick="bmiCalc()">Calculate BMI</button>
-<div class="result" id="bmiResult"></div>
-</div>
-
-
-<!-- UNIT -->
-<div class="toolbox" id="unit">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>📏 Unit Converter</h2>
-<input type="number" id="meters" placeholder="Enter meters">
-<button class="action" onclick="unitConvert()">Convert</button>
-<div class="result" id="unitResult"></div>
-</div>
-
-
-<!-- CASE -->
-<div class="toolbox" id="case">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>🔤 Text Case Converter</h2>
-<textarea id="caseText" placeholder="Enter text..."></textarea>
-<button class="action" onclick="makeUpper()">UPPERCASE</button>
-<button class="action" onclick="makeLower()">lowercase</button>
-<div class="result" id="caseResult"></div>
-</div>
-
-
-<!-- STOPWATCH -->
-<div class="toolbox" id="stopwatch">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>⏱️ Stopwatch</h2>
-<div class="result" id="stopDisplay">00:00:00</div>
-<button class="action" onclick="startStopwatch()">Start</button>
-<button class="action" onclick="stopStopwatch()">Stop</button>
-<button class="action" onclick="resetStopwatch()">Reset</button>
-</div>
-
-
-<!-- COUNTDOWN -->
-<div class="toolbox" id="countdown">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>⏰ Countdown</h2>
-<input type="number" id="countSeconds" placeholder="Seconds">
-<button class="action" onclick="startCountdown()">Start</button>
-<div class="result" id="countResult">00</div>
-</div>
-
-
-<!-- RANDOM NUMBER -->
-<div class="toolbox" id="number">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>🔢 Random Number Generator</h2>
-<input type="number" id="minNumber" placeholder="Minimum">
-<input type="number" id="maxNumber" placeholder="Maximum">
-<button class="action" onclick="randomNumber()">Generate</button>
-<div class="result" id="numberResult"></div>
-</div>
-
-
-<!-- COLOR -->
-<div class="toolbox" id="color">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>🎨 Color Picker</h2>
-<input type="color" id="colorPicker" value="#2563eb" onchange="showColor()">
-<div class="result" id="colorResult">#2563EB</div>
-</div>
-
-
-<!-- URL -->
-<div class="toolbox" id="url">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>🔗 URL Encoder / Decoder</h2>
-<textarea id="urlText" placeholder="Enter text or URL..."></textarea>
-<button class="action" onclick="encodeURL()">Encode</button>
-<button class="action" onclick="decodeURL()">Decode</button>
-<div class="result" id="urlResult"></div>
-</div>
-
-
-<!-- CLEANER -->
-<div class="toolbox" id="cleaner">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>🧹 Text Cleaner</h2>
-<textarea id="cleanText" placeholder="Enter text..."></textarea>
-<button class="action" onclick="cleaner()">Clean Text</button>
-<div class="result" id="cleanResult"></div>
-</div>
-
-
-<!-- DATE DIFFERENCE -->
-<div class="toolbox" id="datediff">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>📅 Date Difference</h2>
-<input type="date" id="date1">
-<input type="date" id="date2">
-<button class="action" onclick="dateDifference()">Calculate</button>
-<div class="result" id="dateResult"></div>
-</div>
-
-
-<!-- JSON -->
-<div class="toolbox" id="json">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>{ } JSON Formatter</h2>
-<textarea id="jsonText" placeholder='Example: {"name":"Sakib"}'></textarea>
-<button class="action" onclick="formatJSON()">Format JSON</button>
-<div class="result" id="jsonResult"></div>
-</div>
-
-
-<!-- BASE64 -->
-<div class="toolbox" id="base64">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>🔐 Base64 Encoder</h2>
-<textarea id="baseText" placeholder="Enter text..."></textarea>
-<button class="action" onclick="encodeBase64()">Encode</button>
-<div class="result" id="baseResult"></div>
-</div>
-
-
-<!-- ROMAN -->
-<div class="toolbox" id="roman">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>🏛️ Roman Number Converter</h2>
-<input type="number" id="romanNumber" placeholder="Enter number 1-3999">
-<button class="action" onclick="romanConvert()">Convert</button>
-<div class="result" id="romanResult"></div>
-</div>
-
-
-<!-- RANDOM CHOICE -->
-<div class="toolbox" id="choice">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>🎲 Random Choice</h2>
-<textarea id="choices" placeholder="Enter options separated by commas"></textarea>
-<button class="action" onclick="randomChoice()">Choose</button>
+<h2>🎯 Random Choice</h2>
+<input id="choices" placeholder="Apple, Banana, Mango">
+<button onclick="randomChoice()">Choose</button>
 <div class="result" id="choiceResult"></div>
 </div>
 
-
-<!-- CHARACTER -->
-<div class="toolbox" id="character">
-<button class="close" onclick="closeTools()">✕</button>
-<h2>🔠 Character Counter</h2>
-<textarea id="charText" oninput="characterCount()" placeholder="Enter text..."></textarea>
-<div class="result" id="charResult">Characters: 0</div>
+<!-- 20 Character Counter -->
+<div class="tool">
+<h2>🔢 Character Counter</h2>
+<textarea id="charText" rows="4" placeholder="Enter text..."></textarea>
+<button onclick="countCharacters()">Count Characters</button>
+<div class="result" id="charResult"></div>
 </div>
 
 </div>
 </div>
-
 
 <footer>
-<h3>🛠️ Free Online Tools</h3>
-<p>Fast • Simple • Free</p>
-<p>© 2026 Free Online Tools</p>
+<p>© 2026 Free Online Tools. All Rights Reserved.</p>
+<p>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy Policy</a>
+</p>
 </footer>
-
 
 <script>
 
-/* OPEN / CLOSE */
-
-function openTool(id){
-    closeTools();
-
-    const box=document.getElementById(id);
-
-    if(box){
-        box.style.display="block";
-        box.scrollIntoView({behavior:"smooth"});
-    }
-}
-
-function closeTools(){
-    document.querySelectorAll(".toolbox")
-    .forEach(x=>x.style.display="none");
-}
-
-
-/* SEARCH */
-
+/* Search */
 function searchTools(){
+    let search=document.getElementById("search").value.toLowerCase();
+    let tools=document.querySelectorAll(".tool");
 
-    const value=document
-        .getElementById("search")
-        .value
-        .toLowerCase();
-
-    document.querySelectorAll(".tool")
-    .forEach(tool=>{
-
-        const text=tool.innerText.toLowerCase();
-
+    tools.forEach(tool=>{
         tool.classList.toggle(
             "hidden",
-            !text.includes(value)
+            !tool.innerText.toLowerCase().includes(search)
         );
     });
 }
 
-
-/* CALCULATOR */
-
+/* Calculator */
 function calculate(){
-
-    const input=document.getElementById("calc").value;
+    let value=document.getElementById("calc").value;
 
     try{
-
-        if(!/^[0-9+\-*/().%\s]+$/.test(input)){
-            throw new Error();
-        }
-
-        const result=Function(
-            '"use strict";return ('+input+')'
-        )();
-
-        document.getElementById("calcResult")
-        .innerText="Result: "+result;
-
+        document.getElementById("calcResult").innerText=eval(value);
     }catch{
-
-        document.getElementById("calcResult")
-        .innerText="Please enter a valid calculation.";
-
+        document.getElementById("calcResult").innerText="Invalid calculation";
     }
 }
 
+/* Age */
+function calculateAge(){
+    let birth=new Date(document.getElementById("birthDate").value);
 
-/* AGE */
-
-function ageCalc(){
-
-    const value=document.getElementById("birth").value;
-
-    if(!value){
-        document.getElementById("ageResult")
-        .innerText="Please select your birth date.";
+    if(!document.getElementById("birthDate").value){
+        document.getElementById("ageResult").innerText="Please select your birth date.";
         return;
     }
 
-    const birth=new Date(value);
-    const today=new Date();
-
+    let today=new Date();
     let age=today.getFullYear()-birth.getFullYear();
 
-    if(
-        today.getMonth()<birth.getMonth() ||
-        (
-            today.getMonth()===birth.getMonth() &&
-            today.getDate()<birth.getDate()
-        )
-    ){
+    let month=today.getMonth()-birth.getMonth();
+
+    if(month<0 || (month===0 && today.getDate()<birth.getDate())){
         age--;
     }
 
-    document.getElementById("ageResult")
-    .innerText="Your age: "+age+" years";
+    document.getElementById("ageResult").innerText="Your age is "+age+" years.";
 }
 
+/* Word Counter */
+function countWords(){
+    let text=document.getElementById("wordText").value.trim();
+    let words=text?text.split(/\s+/).length:0;
 
-/* WORD COUNT */
-
-function wordCount(){
-
-    const text=document.getElementById("wordText").value;
-
-    const words=text.trim()
-        ?text.trim().split(/\s+/).length
-        :0;
-
-    const characters=text.length;
-
-    const sentences=text
-        .split(/[.!?]+/)
-        .filter(x=>x.trim()).length;
-
-    document.getElementById("wordResult")
-    .innerText=
-    "Words: "+words+
-    " | Characters: "+characters+
-    " | Sentences: "+sentences;
+    document.getElementById("wordResult").innerText=
+        "Words: "+words;
 }
 
+/* Password */
+function generatePassword(){
+    let length=parseInt(document.getElementById("passLength").value)||12;
 
-/* PASSWORD */
-
-function passwordGen(){
-
-    const length=Number(
-        document.getElementById("passLength").value
-    );
-
-    const chars=
+    let chars=
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
 
     let password="";
 
     for(let i=0;i<length;i++){
-        password+=chars[
-            Math.floor(Math.random()*chars.length)
-        ];
+        password+=chars[Math.floor(Math.random()*chars.length)];
     }
 
-    document.getElementById("passResult")
-    .innerText=password;
+    document.getElementById("passResult").innerText=password;
 }
 
-
-/* PERCENTAGE */
-
+/* Percentage */
 function percentage(){
+    let a=parseFloat(document.getElementById("percentA").value);
+    let b=parseFloat(document.getElementById("percentB").value);
 
-    const value=Number(
-        document.getElementById("percentValue").value
-    );
-
-    const total=Number(
-        document.getElementById("percentTotal").value
-    );
-
-    if(total===0){
-        document.getElementById("percentResult")
-        .innerText="Total cannot be zero.";
+    if(isNaN(a)||isNaN(b)||b===0){
+        document.getElementById("percentResult").innerText="Enter valid numbers.";
         return;
     }
 
-    document.getElementById("percentResult")
-    .innerText=
-    ((value/total)*100).toFixed(2)+"%";
+    document.getElementById("percentResult").innerText=
+        ((a/b)*100).toFixed(2)+"%";
 }
-
 
 /* BMI */
+function bmi(){
+    let weight=parseFloat(document.getElementById("weight").value);
+    let height=parseFloat(document.getElementById("height").value)/100;
 
-function bmiCalc(){
-
-    const h=Number(
-        document.getElementById("height").value
-    );
-
-    const w=Number(
-        document.getElementById("weight").value
-    );
-
-    if(h<=0 || w<=0){
-        document.getElementById("bmiResult")
-        .innerText="Enter valid values.";
+    if(!weight||!height){
+        document.getElementById("bmiResult").innerText="Enter valid values.";
         return;
     }
 
-    const bmi=w/Math.pow(h/100,2);
+    let value=weight/(height*height);
 
-    document.getElementById("bmiResult")
-    .innerText="BMI: "+bmi.toFixed(2);
+    document.getElementById("bmiResult").innerText=
+        "BMI: "+value.toFixed(2);
 }
 
+/* Unit Converter */
+function convertUnit(){
+    let value=parseFloat(document.getElementById("unitValue").value);
+    let type=document.getElementById("unitType").value;
 
-/* UNIT */
+    if(isNaN(value)){
+        document.getElementById("unitResult").innerText="Enter a value.";
+        return;
+    }
 
-function unitConvert(){
+    let result;
 
-    const m=Number(
-        document.getElementById("meters").value
-    );
+    if(type==="kmmi") result=value*0.621371;
+    if(type==="mikm") result=value*1.60934;
+    if(type==="mft") result=value*3.28084;
+    if(type==="ftm") result=value*0.3048;
+    if(type==="kgp") result=value*2.20462;
+    if(type==="pkg") result=value*0.453592;
 
-    document.getElementById("unitResult")
-    .innerText=
-    m+" m = "+
-    (m*100)+" cm = "+
-    (m/1000)+" km = "+
-    (m*3.28084).toFixed(2)+" ft";
+    document.getElementById("unitResult").innerText=
+        result.toFixed(4);
 }
 
-
-/* TEXT CASE */
-
-function makeUpper(){
-    document.getElementById("caseResult")
-    .innerText=
-    document.getElementById("caseText")
-    .value.toUpperCase();
+/* Text Case */
+function upperCase(){
+    document.getElementById("caseResult").innerText=
+        document.getElementById("caseText").value.toUpperCase();
 }
 
-function makeLower(){
-    document.getElementById("caseResult")
-    .innerText=
-    document.getElementById("caseText")
-    .value.toLowerCase();
+function lowerCase(){
+    document.getElementById("caseResult").innerText=
+        document.getElementById("caseText").value.toLowerCase();
 }
 
+function titleCase(){
+    let text=document.getElementById("caseText").value;
 
-/* STOPWATCH */
+    document.getElementById("caseResult").innerText=
+        text.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
+}
 
+/* Stopwatch */
 let stopwatchTime=0;
 let stopwatchInterval=null;
 
 function updateStopwatch(){
-
     stopwatchTime++;
 
-    let seconds=stopwatchTime%60;
-    let minutes=Math.floor(stopwatchTime/60)%60;
-    let hours=Math.floor(stopwatchTime/3600);
+    let h=Math.floor(stopwatchTime/3600);
+    let m=Math.floor((stopwatchTime%3600)/60);
+    let s=stopwatchTime%60;
 
-    document.getElementById("stopDisplay")
-    .innerText=
-    String(hours).padStart(2,"0")+":"+
-    String(minutes).padStart(2,"0")+":"+
-    String(seconds).padStart(2,"0");
+    document.getElementById("stopwatch").innerText=
+        String(h).padStart(2,"0")+":"+
+        String(m).padStart(2,"0")+":"+
+        String(s).padStart(2,"0");
 }
 
 function startStopwatch(){
-
-    if(stopwatchInterval)return;
-
-    stopwatchInterval=setInterval(
-        updateStopwatch,
-        1000
-    );
+    if(stopwatchInterval===null){
+        stopwatchInterval=setInterval(updateStopwatch,1000);
+    }
 }
 
 function stopStopwatch(){
-
     clearInterval(stopwatchInterval);
     stopwatchInterval=null;
 }
 
 function resetStopwatch(){
-
     stopStopwatch();
     stopwatchTime=0;
-
-    document.getElementById("stopDisplay")
-    .innerText="00:00:00";
+    document.getElementById("stopwatch").innerText="00:00:00";
 }
 
-
-/* COUNTDOWN */
-
+/* Countdown */
 let countdownInterval=null;
 
 function startCountdown(){
-
     clearInterval(countdownInterval);
 
-    let seconds=Number(
-        document.getElementById("countSeconds").value
-    );
+    let seconds=parseInt(document.getElementById("countSeconds").value);
 
-    if(seconds<=0)return;
+    if(isNaN(seconds)||seconds<1){
+        document.getElementById("countResult").innerText="Enter seconds.";
+        return;
+    }
 
-    document.getElementById("countResult")
-    .innerText=seconds;
+    let result=document.getElementById("countResult");
+
+    result.innerText=seconds;
 
     countdownInterval=setInterval(()=>{
-
         seconds--;
 
-        document.getElementById("countResult")
-        .innerText=seconds;
+        result.innerText=seconds;
 
         if(seconds<=0){
             clearInterval(countdownInterval);
-            document.getElementById("countResult")
-            .innerText="⏰ Time's up!";
+            result.innerText="⏰ Time's up!";
         }
-
     },1000);
 }
 
-
-/* RANDOM NUMBER */
-
+/* Random Number */
 function randomNumber(){
+    let min=parseInt(document.getElementById("minNum").value);
+    let max=parseInt(document.getElementById("maxNum").value);
 
-    const min=Number(
-        document.getElementById("minNumber").value
-    );
-
-    const max=Number(
-        document.getElementById("maxNumber").value
-    );
-
-    if(min>max){
-        document.getElementById("numberResult")
-        .innerText="Minimum must be smaller.";
+    if(isNaN(min)||isNaN(max)||min>max){
+        document.getElementById("randomResult").innerText=
+            "Enter valid range.";
         return;
     }
 
-    const result=
-    Math.floor(Math.random()*(max-min+1))+min;
+    let result=Math.floor(Math.random()*(max-min+1))+min;
 
-    document.getElementById("numberResult")
-    .innerText="Random number: "+result;
+    document.getElementById("randomResult").innerText=result;
 }
 
-
-/* COLOR */
-
-function showColor(){
-
-    const color=
-    document.getElementById("colorPicker").value;
-
-    document.getElementById("colorResult")
-    .innerText=color.toUpperCase();
-}
-
+/* Color Picker */
+document.getElementById("colorPicker").addEventListener("input",function(){
+    document.getElementById("colorResult").innerText=
+        this.value.toUpperCase();
+});
 
 /* URL */
-
 function encodeURL(){
+    let text=document.getElementById("urlText").value;
 
-    const text=
-    document.getElementById("urlText").value;
-
-    document.getElementById("urlResult")
-    .innerText=encodeURIComponent(text);
+    document.getElementById("urlResult").innerText=
+        encodeURIComponent(text);
 }
 
 function decodeURL(){
-
-    const text=
-    document.getElementById("urlText").value;
+    let text=document.getElementById("urlText").value;
 
     try{
-        document.getElementById("urlResult")
-        .innerText=decodeURIComponent(text);
+        document.getElementById("urlResult").innerText=
+            decodeURIComponent(text);
     }catch{
-        document.getElementById("urlResult")
-        .innerText="Invalid encoded text.";
+        document.getElementById("urlResult").innerText="Invalid URL text.";
     }
 }
 
+/* Text Cleaner */
+function cleanText(){
+    let text=document.getElementById("cleanText").value;
 
-/* TEXT CLEANER */
+    text=text.replace(/\s+/g," ").trim();
 
-function cleaner(){
-
-    const text=
-    document.getElementById("cleanText").value;
-
-    const cleaned=
-    text.replace(/\s+/g," ").trim();
-
-    document.getElementById("cleanResult")
-    .innerText=cleaned;
+    document.getElementById("cleanResult").innerText=text;
 }
 
-
-/* DATE DIFFERENCE */
-
+/* Date Difference */
 function dateDifference(){
+    let d1=new Date(document.getElementById("date1").value);
+    let d2=new Date(document.getElementById("date2").value);
 
-    const a=new Date(
-        document.getElementById("date1").value
-    );
-
-    const b=new Date(
-        document.getElementById("date2").value
-    );
-
-    if(isNaN(a)||isNaN(b)){
-        document.getElementById("dateResult")
-        .innerText="Select both dates.";
+    if(isNaN(d1)||isNaN(d2)){
+        document.getElementById("dateResult").innerText=
+            "Select both dates.";
         return;
     }
 
-    const days=
-    Math.abs(b-a)/(1000*60*60*24);
+    let diff=Math.abs(d2-d1);
+    let days=Math.ceil(diff/(1000*60*60*24));
 
-    document.getElementById("dateResult")
-    .innerText="Difference: "+days+" days";
+    document.getElementById("dateResult").innerText=
+        days+" days";
 }
-
 
 /* JSON */
-
 function formatJSON(){
-
-    const text=
-    document.getElementById("jsonText").value;
+    let text=document.getElementById("jsonText").value;
 
     try{
+        let obj=JSON.parse(text);
 
-        const obj=JSON.parse(text);
-
-        document.getElementById("jsonResult")
-        .innerText=
-        JSON.stringify(obj,null,2);
-
+        document.getElementById("jsonResult").innerText=
+            JSON.stringify(obj,null,2);
     }catch{
-
-        document.getElementById("jsonResult")
-        .innerText="Invalid JSON.";
+        document.getElementById("jsonResult").innerText=
+            "Invalid JSON.";
     }
 }
 
-
-/* BASE64 */
-
+/* Base64 */
 function encodeBase64(){
-
-    const text=
-    document.getElementById("baseText").value;
+    let text=document.getElementById("baseText").value;
 
     try{
-
-        document.getElementById("baseResult")
-        .innerText=btoa(
-            unescape(encodeURIComponent(text))
-        );
-
+        document.getElementById("baseResult").innerText=
+            btoa(unescape(encodeURIComponent(text)));
     }catch{
-
-        document.getElementById("baseResult")
-        .innerText="Unable to encode.";
+        document.getElementById("baseResult").innerText=
+            "Could not encode.";
     }
 }
 
+function decodeBase64(){
+    let text=document.getElementById("baseText").value;
 
-/* ROMAN */
+    try{
+        document.getElementById("baseResult").innerText=
+            decodeURIComponent(escape(atob(text)));
+    }catch{
+        document.getElementById("baseResult").innerText=
+            "Invalid Base64.";
+    }
+}
 
-function romanConvert(){
+/* Roman Number */
+function toRoman(){
+    let num=parseInt(document.getElementById("romanNum").value);
 
-    let num=Number(
-        document.getElementById("romanNumber").value
-    );
-
-    if(num<1 || num>3999){
-        document.getElementById("romanResult")
-        .innerText="Enter a number from 1 to 3999.";
+    if(isNaN(num)||num<1||num>3999){
+        document.getElementById("romanResult").innerText=
+            "Enter a number from 1 to 3999.";
         return;
     }
 
-    const values=[
+    let values=[
         [1000,"M"],
         [900,"CM"],
         [500,"D"],
@@ -1096,56 +703,43 @@ function romanConvert(){
 
     let result="";
 
-    for(const [value,symbol] of values){
-
+    for(let [value,symbol] of values){
         while(num>=value){
-
             result+=symbol;
             num-=value;
-
         }
     }
 
-    document.getElementById("romanResult")
-    .innerText=result;
+    document.getElementById("romanResult").innerText=result;
 }
 
-
-/* RANDOM CHOICE */
-
+/* Random Choice */
 function randomChoice(){
+    let text=document.getElementById("choices").value;
 
-    const text=
-    document.getElementById("choices").value;
-
-    const list=text
+    let choices=text
         .split(",")
         .map(x=>x.trim())
-        .filter(Boolean);
+        .filter(x=>x);
 
-    if(list.length===0){
-        document.getElementById("choiceResult")
-        .innerText="Enter some choices.";
+    if(choices.length===0){
+        document.getElementById("choiceResult").innerText=
+            "Enter choices separated by commas.";
         return;
     }
 
-    const choice=
-    list[Math.floor(Math.random()*list.length)];
+    let result=choices[Math.floor(Math.random()*choices.length)];
 
-    document.getElementById("choiceResult")
-    .innerText="Selected: "+choice;
+    document.getElementById("choiceResult").innerText=
+        "Selected: "+result;
 }
 
+/* Character Counter */
+function countCharacters(){
+    let text=document.getElementById("charText").value;
 
-/* CHARACTER COUNTER */
-
-function characterCount(){
-
-    const text=
-    document.getElementById("charText").value;
-
-    document.getElementById("charResult")
-    .innerText="Characters: "+text.length;
+    document.getElementById("charResult").innerText=
+        "Characters: "+text.length;
 }
 
 </script>
