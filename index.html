@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free Online Tools</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    padding:35px 15px;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+    font-size:30px;
+}
+
+header p{
+    margin:10px 0 0;
+    opacity:.9;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+.search{
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-size:16px;
+    margin-bottom:20px;
+}
+
+.tools{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    border-radius:16px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.icon{
+    font-size:38px;
+}
+
+.card h2{
+    font-size:20px;
+    margin:12px 0 8px;
+}
+
+.card p{
+    color:#666;
+    line-height:1.5;
+}
+
+button{
+    width:100%;
+    border:0;
+    padding:12px;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.tool-box{
+    margin-top:20px;
+    background:white;
+    padding:20px;
+    border-radius:16px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+input,textarea{
+    width:100%;
+    padding:13px;
+    margin:7px 0;
+    border:1px solid #ddd;
+    border-radius:9px;
+    font-size:16px;
+}
+
+textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.result{
+    margin-top:15px;
+    padding:15px;
+    background:#eef4ff;
+    border-radius:10px;
+    font-weight:bold;
+    text-align:center;
+}
+
+.ad-box{
+    margin:20px 0;
+    padding:25px;
+    background:white;
+    border:1px dashed #bbb;
+    border-radius:12px;
+    text-align:center;
+    color:#888;
+}
+
+footer{
+    margin-top:40px;
+    padding:25px;
+    background:#111827;
+    color:white;
+    text-align:center;
+}
+
+.hidden{
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🛠️ Free Online Tools</h1>
+    <p>Simple, fast and free tools for everyone</p>
+</header>
+
+<div class="container">
+
+<input
+    class="search"
+    id="search"
+    type="text"
+    placeholder="🔎 Search a tool..."
+    onkeyup="searchTools()"
+>
+
+<div class="ad-box">
+    Advertisement
+    <br>
+    <small>Ad space — monetization can be added later</small>
+</div>
+
+<div class="tools" id="tools">
+
+<div class="card tool-card">
+    <div class="icon">🧮</div>
+    <h2>Calculator</h2>
+    <p>Calculate numbers quickly.</p>
+    <button onclick="openTool('calculator')">Open Tool</button>
+</div>
+
+<div class="card tool-card">
+    <div class="icon">📊</div>
+    <h2>Percentage Calculator</h2>
+    <p>Calculate percentages easily.</p>
+    <button onclick="openTool('percentage')">Open Tool</button>
+</div>
+
+<div class="card tool-card">
+    <div class="icon">🎂</div>
+    <h2>Age Calculator</h2>
+    <p>Calculate age from birth date.</p>
+    <button onclick="openTool('age')">Open Tool</button>
+</div>
+
+<div class="card tool-card">
+    <div class="icon">🔤</div>
+    <h2>Word Counter</h2>
+    <p>Count words and characters.</p>
+    <button onclick="openTool('words')">Open Tool</button>
+</div>
+
+</div>
+
+<div id="calculator" class="tool-box hidden">
+    <h2>🧮 Calculator</h2>
+    <input id="calc" type="text" placeholder="Example: 25+10*2">
+    <button onclick="calculate()">Calculate</button>
+    <div id="calcResult" class="result">Result will appear here</div>
+</div>
+
+<div id="percentage" class="tool-box hidden">
+    <h2>📊 Percentage Calculator</h2>
+    <input id="percent" type="number" placeholder="Percentage">
+    <input id="number" type="number" placeholder="Number">
+    <button onclick="percentage()">Calculate</button>
+    <div id="percentResult" class="result">Result will appear here</div>
+</div>
+
+<div id="age" class="tool-box hidden">
+    <h2>🎂 Age Calculator</h2>
+    <input id="birthdate" type="date">
+    <button onclick="ageCalculator()">Calculate Age</button>
+    <div id="ageResult" class="result">Your age will appear here</div>
+</div>
+
+<div id="words" class="tool-box hidden">
+    <h2>🔤 Word Counter</h2>
+    <textarea id="text" placeholder="Write or paste your text here"></textarea>
+    <button onclick="wordCounter()">Count</button>
+    <div id="wordResult" class="result">Result will appear here</div>
+</div>
+
+</div>
+
+<footer>
+    <p>© 2026 Free Online Tools</p>
+    <p>Free tools • Fast • Easy to use</p>
+</footer>
+
+<script>
+
+function openTool(id){
+
+    document.querySelectorAll(".tool-box")
+    .forEach(box => box.classList.add("hidden"));
+
+    document.getElementById(id).classList.remove("hidden");
+
+    document.getElementById(id).scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+function calculate(){
+
+    let value=document.getElementById("calc").value;
+
+    try{
+        let result=Function(
+            '"use strict";return ('+value+')'
+        )();
+
+        document.getElementById("calcResult").innerText=
+        "Result: "+result;
+
+    }catch{
+        document.getElementById("calcResult").innerText=
+        "Invalid calculation";
+    }
+}
+
+function percentage(){
+
+    let p=parseFloat(
+        document.getElementById("percent").value
+    );
+
+    let n=parseFloat(
+        document.getElementById("number").value
+    );
+
+    if(isNaN(p)||isNaN(n)){
+
+        document.getElementById("percentResult").innerText=
+        "Please enter both numbers";
+
+        return;
+    }
+
+    let result=(p*n)/100;
+
+    document.getElementById("percentResult").innerText=
+    p+"% of "+n+" = "+result;
+}
+
+function ageCalculator(){
+
+    let birth=document.getElementById("birthdate").value;
+
+    if(!birth){
+
+        document.getElementById("ageResult").innerText=
+        "Please select your birth date";
+
+        return;
+    }
+
+    let dob=new Date(birth);
+    let today=new Date();
+
+    let age=today.getFullYear()-dob.getFullYear();
+
+    let month=today.getMonth()-dob.getMonth();
+
+    if(
+        month<0 ||
+        (month===0 && today.getDate()<dob.getDate())
+    ){
+        age--;
+    }
+
+    document.getElementById("ageResult").innerText=
+    "Your age is "+age+" years";
+}
+
+function wordCounter(){
+
+    let text=document.getElementById("text").value.trim();
+
+    let words=text ? text.split(/\s+/).length : 0;
+
+    let characters=text.length;
+
+    document.getElementById("wordResult").innerText=
+    "Words: "+words+" | Characters: "+characters;
+}
+
+function searchTools(){
+
+    let search=
+    document.getElementById("search").value.toLowerCase();
+
+    document.querySelectorAll(".tool-card")
+    .forEach(card=>{
+
+        let text=card.innerText.toLowerCase();
+
+        card.style.display=
+        text.includes(search) ? "" : "none";
+
+    });
+}
+
+</script>
+
+</body>
+</html>
