@@ -743,6 +743,140 @@ function countCharacters(){
 }
 
 </script>
+<!-- IMAGE COMPRESSOR TOOL -->
+<section class="tool-box" id="imageCompressor">
+    <h2>🖼️ Image Compressor</h2>
+    <p>Reduce image size quickly and easily.</p>
 
+    <input type="file" id="imageInput" accept="image/*">
+
+    <br><br>
+
+    <label for="quality">
+        Compression Quality:
+        <strong><span id="qualityText">70</span>%</strong>
+    </label>
+
+    <br>
+
+    <input
+        type="range"
+        id="quality"
+        min="10"
+        max="100"
+        value="70"
+    >
+
+    <br><br>
+
+    <button onclick="compressImage()">
+        Compress Image
+    </button>
+
+    <p id="compressResult"></p>
+
+    <a
+        id="downloadImage"
+        style="display:none;"
+        download="compressed-image.jpg"
+    >
+        ⬇️ Download Compressed Image
+    </a>
+</section>
+
+<script>
+const quality = document.getElementById("quality");
+const qualityText = document.getElementById("qualityText");
+
+quality.addEventListener("input", function () {
+    qualityText.textContent = this.value;
+});
+
+function compressImage() {
+
+    const input = document.getElementById("imageInput");
+    const result = document.getElementById("compressResult");
+    const download = document.getElementById("downloadImage");
+
+    if (!input.files || !input.files[0]) {
+        result.textContent = "⚠️ Please select an image first.";
+        download.style.display = "none";
+        return;
+    }
+
+    const file = input.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+
+        const image = new Image();
+
+        image.onload = function() {
+
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
+
+            canvas.width = image.width;
+            canvas.height = image.height;
+
+            ctx.drawImage(
+                image,
+                0,
+                0,
+                image.width,
+                image.height
+            );
+
+            const compressionQuality =
+                Number(quality.value) / 100;
+
+            canvas.toBlob(function(blob) {
+
+                if (!blob) {
+                    result.textContent =
+                        "❌ Compression failed.";
+                    return;
+                }
+
+                const compressedURL =
+                    URL.createObjectURL(blob);
+
+                const originalSize =
+                    formatFileSize(file.size);
+
+                const compressedSize =
+                    formatFileSize(blob.size);
+
+                result.innerHTML =
+                    "✅ Original: " +
+                    originalSize +
+                    "<br>📦 Compressed: " +
+                    compressedSize;
+
+                download.href = compressedURL;
+                download.style.display = "inline-block";
+
+            }, "image/jpeg", compressionQuality);
+        };
+
+        image.src = event.target.result;
+    };
+
+    reader.readAsDataURL(file);
+}
+
+function formatFileSize(bytes) {
+
+    if (bytes < 1024) {
+        return bytes + " B";
+    }
+
+    if (bytes < 1024 * 1024) {
+        return (bytes / 1024).toFixed(1) + " KB";
+    }
+
+    return (bytes / (1024 * 1024)).toFixed(2) + " MB";
+}
+</script>
 </body>
 </html>
