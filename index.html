@@ -1147,5 +1147,76 @@ function convertImage() {
     reader.readAsDataURL(file);
 }
 </script>
+    <!-- QR CODE GENERATOR -->
+<section class="tool-box" id="qrGenerator">
+    <h2>📱 QR Code Generator</h2>
+    <p>Create a QR code from text or a website link.</p>
+
+    <textarea
+        id="qrText"
+        placeholder="Enter text or website link..."
+        rows="4"
+        style="width:90%; max-width:500px;"
+    ></textarea>
+
+    <br><br>
+
+    <button onclick="generateQR()">
+        Generate QR Code
+    </button>
+
+    <div id="qrResult" style="margin-top:20px;"></div>
+
+    <a
+        id="downloadQR"
+        style="display:none;"
+        download="qr-code.png"
+    >
+        ⬇️ Download QR Code
+    </a>
+</section>
+
+<!-- QR CODE LIBRARY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+function generateQR() {
+
+    const text = document.getElementById("qrText").value.trim();
+    const result = document.getElementById("qrResult");
+    const download = document.getElementById("downloadQR");
+
+    if (!text) {
+        result.innerHTML =
+            "⚠️ Please enter some text or a website link.";
+        download.style.display = "none";
+        return;
+    }
+
+    result.innerHTML = "";
+
+    const qrBox = document.createElement("div");
+
+    result.appendChild(qrBox);
+
+    new QRCode(qrBox, {
+        text: text,
+        width: 220,
+        height: 220,
+        correctLevel: QRCode.CorrectLevel.H
+    });
+
+    setTimeout(function () {
+
+        const canvas = qrBox.querySelector("canvas");
+
+        if (canvas) {
+            download.href = canvas.toDataURL("image/png");
+            download.style.display = "inline-block";
+        }
+
+    }, 500);
+}
+</script>
 </body>
 </html>
