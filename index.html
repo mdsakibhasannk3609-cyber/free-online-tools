@@ -1043,5 +1043,109 @@ function resizeImage() {
     }, "image/jpeg", 0.92);
 }
 </script>
+    <!-- JPG / PNG CONVERTER -->
+<section class="tool-box" id="imageConverter">
+    <h2>🔄 JPG ↔ PNG Converter</h2>
+    <p>Convert your image format easily.</p>
+
+    <input type="file" id="convertInput" accept="image/*">
+
+    <br><br>
+
+    <select id="convertFormat">
+        <option value="png">PNG</option>
+        <option value="jpeg">JPG</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="convertImage()">
+        Convert Image
+    </button>
+
+    <p id="convertResult"></p>
+
+    <a
+        id="downloadConverted"
+        style="display:none;"
+        download="converted-image"
+    >
+        ⬇️ Download Converted Image
+    </a>
+</section>
+
+<script>
+function convertImage() {
+
+    const input = document.getElementById("convertInput");
+    const format = document.getElementById("convertFormat").value;
+    const result = document.getElementById("convertResult");
+    const download = document.getElementById("downloadConverted");
+
+    if (!input.files || !input.files[0]) {
+        result.textContent = "⚠️ Please select an image first.";
+        return;
+    }
+
+    const file = input.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+
+        const img = new Image();
+
+        img.onload = function() {
+
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
+
+            canvas.width = img.width;
+            canvas.height = img.height;
+
+            // White background when converting to JPG
+            if (format === "jpeg") {
+                ctx.fillStyle = "#ffffff";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+
+            ctx.drawImage(img, 0, 0);
+
+            const mimeType =
+                format === "png"
+                ? "image/png"
+                : "image/jpeg";
+
+            canvas.toBlob(function(blob) {
+
+                if (!blob) {
+                    result.textContent = "❌ Conversion failed.";
+                    return;
+                }
+
+                const url = URL.createObjectURL(blob);
+
+                download.href = url;
+
+                download.download =
+                    format === "png"
+                    ? "converted-image.png"
+                    : "converted-image.jpg";
+
+                download.style.display = "inline-block";
+
+                result.textContent =
+                    "✅ Image converted to " +
+                    (format === "png" ? "PNG" : "JPG") +
+                    " successfully.";
+
+            }, mimeType, 0.92);
+        };
+
+        img.src = e.target.result;
+    };
+
+    reader.readAsDataURL(file);
+}
+</script>
 </body>
 </html>
