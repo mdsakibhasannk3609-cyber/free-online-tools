@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mdsakibhasannk3609-cyber.github.io/free-online-tools/sitemap.xml
