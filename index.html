@@ -145,6 +145,124 @@ footer a{
 
 .hidden{
     display:none;
+    /* ===== ATTRACTIVE TOOL DESIGN ===== */
+
+.tool{
+    transition:transform .25s ease, box-shadow .25s ease;
+    border:1px solid #e5e7eb;
+    position:relative;
+    overflow:hidden;
+}
+
+.tool:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 30px rgba(37,99,235,.15);
+}
+
+.tool h2{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.tool p{
+    color:#64748b;
+    line-height:1.6;
+    font-size:14px;
+}
+
+/* Extra image & QR tools */
+
+.tool-box{
+    background:white;
+    max-width:1100px;
+    margin:18px auto;
+    padding:22px;
+    border-radius:16px;
+    border:1px solid #e5e7eb;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.tool-box:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 30px rgba(37,99,235,.15);
+}
+
+.tool-box h2{
+    margin-top:0;
+    color:#2563eb;
+    font-size:21px;
+}
+
+.tool-box p{
+    color:#64748b;
+    line-height:1.6;
+}
+
+.tool-box a{
+    display:inline-block;
+    margin-top:12px;
+    padding:10px 16px;
+    background:#16a34a;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-size:14px;
+}
+
+.tool-box a:hover{
+    background:#15803d;
+}
+
+/* Better search box */
+
+.search{
+    border:2px solid #e2e8f0;
+    outline:none;
+    transition:.2s;
+}
+
+.search:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 3px rgba(37,99,235,.12);
+}
+
+/* Better buttons */
+
+button{
+    transition:transform .15s ease, background .2s ease;
+}
+
+button:hover{
+    transform:translateY(-1px);
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:27px;
+    }
+
+    .container{
+        padding:14px;
+    }
+
+    .tools{
+        grid-template-columns:1fr;
+    }
+
+    .tool{
+        padding:18px;
+    }
+
+    .tool-box{
+        margin:15px 14px;
+        padding:18px;
+    }
+}
 }
 .seo-intro{
     max-width:1100px;
